@@ -3,23 +3,40 @@ $(document).ready(function(){
 
 	//  update displayed employees list after each submit
 	function listEmployee(employee){
+		var $div = $('<div>');
 		for (var i=0;i<employee.length;i++){
 			//Creates new tags for appends
-			var $ul = $('<ul>')
-			var $liName = $('<li>')
-			var $liValue = $('<li>')
+			
+			var $ulX = $('<ul>');
+			var $liName = $('<li>');
+			var $liValue = $('<li>');
 
-			//-----------------Problem is here, I think--------------------
-			$liName.text(employee[i].name);
-			$liValue.text(employee[i].value);
+			//create lists
+			$liName.append(employee[i].name);
+			$liValue.append(employee[i].value);
 
-			$ul.append($liName + $liValue);
-			$('.content').append($ul);
+			$ulX.append($liName).append($liValue);
+			$div.append($ulX);
 
-			console.log(employee[i].value);
 		}
+		// append all form content
+		$('.content').append($div);
+
+		//Add Button to Delete employee
+		function removeEmployee () {
+			var $button = $('<button>');
+			$button.text('Remove Employee');
+			$button.on('click',function () {
+				$(this).parent().remove();
+			});
+			$div.append($button);
+		}
+		removeEmployee();
 	};
 
+	$('.createEmp').on('click',function(){
+		$('form').removeClass('display','hide')
+	});
 
 	//Store form results on submit
 	$('form').on('submit',function(){
