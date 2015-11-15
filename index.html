@@ -2,25 +2,30 @@
 <html>
 <head>
 	<title>First Weekend Project</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-	<button class="createEmp" type="button">Create Employee</button>
-	<form>	
-		<input type="text" placeholder="First Name" name="firstName"></input>
-		<br>
-		<input type="text" placeholder="Last Name" name="lastName"></input>
-		<br>
-		<input type="number" placeholder="Employee Number" name="empNum">
-		<br>
-		<input type="text" placeholder="Title" name="title"></input>
-		<br>
-		<input type="number" placeholder="Last Review Score" name="lastScore"></input>
-		<br>
-		<input type="number" placeholder="Salary" name="salary"></input>
-		<br>
-		<input type="submit" value="Submit Me"></input>
-</form>
-<div class="content"></div>
+	<div class="page">
+		<div class="form">
+			<form>	
+				<input type="text" placeholder="First Name" name="First Name"></input>
+				<br>
+				<input type="text" placeholder="Last Name" name="Last Name"></input>
+				<br>
+				<input type="number" placeholder="Employee Number" name="Employee Number">
+				<br>
+				<input type="text" placeholder="Title" name="Title"></input>
+				<br>
+				<input type="number" placeholder="Last Review Score" name="Last Review Score" min="1" max="5"></input>
+				<br>
+				<input type="number" placeholder="Salary" name="Salary"></input>
+				<br>
+				<input type="submit" value="Submit Me"></input>
+			</form>
+		</div>
+		<div class="content"></div>
+	</div>
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 </body>
