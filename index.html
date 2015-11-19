@@ -4,8 +4,24 @@
 	<title>First Weekend Project</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 </head>
 <body>
+	<table class="employees">
+				<script id="employee-list" type="text/x-handlebars-template">
+					{{#each employees}}
+						<tr>
+							<td>firstName</td>
+							<td>lastName</td>
+							<td>empNum</td>
+							<td>title</td>
+							<td>lastScore</td>
+							<td>salary</td>
+						</tr>
+					{{/each}}
+				</script>
+	</table>
 	<div class="page">
 		<div class="form">
 			<form>	
@@ -26,7 +42,6 @@
 		</div>
 		<div class="content"></div>
 	</div>
-<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

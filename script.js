@@ -53,12 +53,11 @@ $(document).ready(function(){
 		var employee = $(this).serializeArray(); //Add results to employee variable
 		employees.push(employee);
 
+
 		listEmployee(employee);
 		$('form')[0].reset();
 
 	});
 
 })
-
-
 	
