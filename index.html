@@ -8,40 +8,42 @@
 	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 </head>
 <body>
-	<table class="employees">
-				<script id="employee-list" type="text/x-handlebars-template">
-					{{#each employees}}
-						<tr>
-							<td>firstName</td>
-							<td>lastName</td>
-							<td>empNum</td>
-							<td>title</td>
-							<td>lastScore</td>
-							<td>salary</td>
-						</tr>
-					{{/each}}
-				</script>
-	</table>
+
 	<div class="page">
 		<div class="form">
 			<form>	
-				<input type="text" placeholder="First Name" name="First Name"></input>
+				<input type="text" class="fn" placeholder="First Name" name="First Name"></input>
 				<br>
-				<input type="text" placeholder="Last Name" name="Last Name"></input>
+				<input type="text" class="ln" placeholder="Last Name" name="Last Name"></input>
 				<br>
-				<input type="number" placeholder="Employee Number" name="Employee Number">
+				<input type="number" class="empNum" placeholder="Employee Number" name="Employee Number">
 				<br>
-				<input type="text" placeholder="Title" name="Title"></input>
+				<input type="text" class="myTitle" placeholder="Title" name="Title"></input>
 				<br>
-				<input type="number" placeholder="Last Review Score" name="Last Review Score" min="1" max="5"></input>
+				<input type="number" class="LRS" placeholder="Last Review Score" name="Last Review Score" min="1" max="5"></input>
 				<br>
-				<input type="number" placeholder="Salary" name="Salary"></input>
+				<input type="number" class="salary" placeholder="Salary" name="Salary"></input>
 				<br>
-				<input type="submit" value="Submit Me"></input>
+				<input type="submit" class="submit" value="Submit Me"></input>
 			</form>
 		</div>
 		<div class="content"></div>
 	</div>
+	<table class="employees">
+				<script id="employee-list" type="text/x-handlebars-template">
+					{{#each employees}}
+						<tr>
+							<td>{{firstName}}</td>
+							<td>{{lastName}}</td>
+							<td>{{empNum}}</td>
+							<td>{{title}}</td>
+							<td>{{lastScore}}</td>
+							<td>{{salary}}</td>
+							<td><button class="remove">Remove</button></td>
+						</tr>
+					{{/each}}
+				</script>
+	</table>
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

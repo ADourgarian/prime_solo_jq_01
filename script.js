@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 	var employees = [];
 
 	//  update displayed employees list after each submit
@@ -60,4 +60,108 @@ $(document).ready(function(){
 	});
 
 })
+*/
+
+function Employee(firstName, lastName, num, myTitle, reviewScore, salary) {
 	
+	var newEmp = {};
+  	newEmp.firstName = firstName;
+ 	newEmp.lastName = lastName;
+ 	newEmp.empNum = num;
+ 	newEmp.title = myTitle;
+ 	newEmp.lastScore = reviewScore;
+ 	newEmp.salary = salary;
+ 	console.log(newEmp)
+ 	return newEmp;
+ 	
+ //	var newEmpA = [firstName, lastName, num, myTitle, salary, reviewScore]
+ //	return newEmpA;
+ }
+function EmployeeList(){
+	var list = [];
+
+	this.getList = function() {
+		return list.slice(0);
+	}
+
+	this.addEmployee = function(employee) {
+		if(numExists(employee.num)) {
+			console.log('cant create, employee num already used')
+			return;
+		}
+		if(employee instanceof Employee) {
+			console.log('seflij');
+			list.push(employee);
+		}
+		else {			
+			console.log('seflij');
+			list.push(employee);
+		};
+	}
+
+	this.removeEmployee = function(num) {
+		for(var i = 0; i < list.length; i++){
+			list.splice(i,1);
+			break;
+		}
+	}
+	numExists = function(num) {
+		return list.some(function(element, index, array) {
+			console.log('asdfs');
+			return num == element.num;
+		});
+	}
+};
+$(function(){
+	var employeesList = new EmployeeList();
+	console.log(employeesList);
+
+	$('form').on('submit',function(event){
+		event.preventDefault();
+
+		employeesList.addEmployee(new Employee($('.fn').val(),$('.ln').val(),$('.empNum').val(),$('.myTitle').val(),$('.LRS').val(),$('.salary').val()))
+		console.log(employeesList.getList());
+		var employeeTemplate = $('#employee-list').html();
+
+		var theTemplate = Handlebars.compile(employeeTemplate);
+
+		var compiledHtml = theTemplate({employees: employeesList.getList()});
+
+		$(".employees").append(compiledHtml);
+
+	});
+	$('.remove').on('click',function(){
+		alert('asdf');
+		$('body').css({'background-color':'yellow'});
+	})
+/*
+	var employeeTemplate = $('#employee-list').html();
+
+	var theTemplate = Handlebars.compile(employeeTemplate);
+
+	var compiledHtml = theTemplate({employees: list.getList()});
+
+	$(".employees").append(compiledHtml);
+*/
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
