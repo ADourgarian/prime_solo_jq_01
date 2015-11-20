@@ -13,6 +13,13 @@ form {
 	padding: 50px 30px 50px 30px;
 	margin: 50px 0 80px 50px;
 }
+table {
+	float:left;
+	margin: 50px 0 0 320px;
+}
+table tr{
+	background-color:lightblue;
+}
 .content {
 	position:absolute;
 	width:77%;

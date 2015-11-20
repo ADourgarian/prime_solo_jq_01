@@ -129,11 +129,12 @@ $(function(){
 
 		$(".employees").append(compiledHtml);
 
+		$('.remove').on('click',function(){
+			$(this).parent().parent().remove();
+		});
+
 	});
-	$('.remove').on('click',function(){
-		alert('asdf');
-		$('body').css({'background-color':'yellow'});
-	})
+
 /*
 	var employeeTemplate = $('#employee-list').html();
 
